@@ -1,3 +1,4 @@
+/* ELEMENT SETTINGS */
 body {
     display: flex;
     flex-direction: column;
@@ -14,11 +15,12 @@ header {
     color:rgb(18, 201, 192)
 }
 
-ul {
+header ul {
     margin-right: 20px;
     color: rgb(18, 201, 192);
 }
 
+/* settings for navigation */
 li {
     list-style: none;
     display: inline-block;
@@ -26,23 +28,29 @@ li {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 10px;
     font-size: 30px;
+    transition: 0.5s;
 }
 
-a:visited {
+/* settings to highlight the navigation links on hover */
+li:hover {
+    background-color: rgb(37, 102, 133) ;
+}
+
+/* settings to maintain color consistency in the navigation links */
+a:link, a:visited {
     color: rgb(18, 201, 192);
+    transition: 0.5s;
 }
 
-a:link {
-    color: rgb(18, 201, 192);
-}
-
+/* CLASS SETTINGS */
 .title {
     display: flex;
     justify-content: right;
-    flex-shrink: 0;
+    flex-shrink: 3;
     width: 400px;
     height: 100px;
     background-color: rgb(18, 201, 192);
+    margin: 20px 0px;
 }
 
 .title p {
@@ -52,6 +60,7 @@ a:link {
     margin: 10px;
 }
 
+/* settings for subtitle section */
 .subtitle {
     display: flex;
     justify-content: right;
@@ -84,6 +93,7 @@ a:link {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* settings for content to the left of the blue divider */
 .left {
     display: flex;
     justify-content: right;
@@ -98,6 +108,7 @@ a:link {
     padding-right: 10px;
 }
 
+/* settings for content to the right of the blue divider */
 .right {
     display: flex;
     flex-direction: column;
@@ -109,22 +120,30 @@ a:link {
     margin-left: 20px;
 }
 
-.right img {
-    padding: 10px;
-    display: inline;
-    transition: 0.3s;
-}
-
-.right img:hover {
-    -webkit-filter: brightness(150%); 
-}
-
+/* settings for the image area in the work section */
 .rightWork {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     width: 1200px;
     margin-left: 20px;
+}
+
+/* causes the images in the work section to brighten when hovered over */
+.rightWork a:hover {
+    -webkit-filter: brightness(150%); 
+    transition: 0.5s;
+}
+
+/* settings for the larger and smaller images in the work section */
+.workPrimary {
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px solid rgb(18, 201, 192);
+    position: relative;
+    height: 300px;
+    width: 700px;
+    margin: 10px;
 }
 
 .workImg {
@@ -135,6 +154,12 @@ a:link {
     height: 150px;
     width: 450px;
     margin: 10px;
+}
+
+/* settings for the specific images in the work section */
+#workMain {
+    background-image: url("./images/workPrimary.png");
+    background-size: contain;
 }
 
 #work1 {
@@ -157,6 +182,7 @@ a:link {
     background-size: contain;
 }
 
+/* settings for the div that houses descriptions in the work wection */
 .workBox {
     position: absolute;
     bottom: 20px;
@@ -165,6 +191,7 @@ a:link {
     background-color: rgb(18, 201, 192);
 }
 
+/* settings for the names of the projects in the work section */
 .workText {
     font-size: 30px;
     font-weight: 800px;
@@ -172,8 +199,15 @@ a:link {
     color:rgb(5, 46, 46);
 }
 
+/* settings for the types of code listed in the work section */
 .workSubtext {
     font-size: 16px;
+    color: rgb(5, 46, 46);
+}
+
+/* settings for the footer links */
+.right ul {
+    margin: 0px 20px;
 }
 
 .right li {
@@ -182,7 +216,57 @@ a:link {
     text-decoration: underline;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 10px;
-    font-size: 20px;
+    font-size: 24px;
     color: blue;
+    transition: 0.5s;
 }
 
+/* MEDIA SETTINGS FOR SMALLER SCREENS */
+@media screen and (max-width:1295px) {
+	header {
+        height: 250px;
+    }
+    header ul {
+		height: 230px;
+	}
+
+    ul {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    li {
+        font-size: 20px;
+    }
+
+    .left {
+        min-width: 60px;
+    }
+
+    .left p {
+        font-size: 18px;
+    }
+
+    .right p {
+        padding-right: 5px;
+    }
+    .rightWork {
+        flex-direction: column;
+    }
+
+    .rightWork .workPrimary{
+        width: 200px;
+        height: 150px;
+    }
+
+    .rightWork .workImg {
+        width: 200px;
+        height: 150px;
+    }
+
+    .right li {
+        font-size: 16px;
+        margin: 5px;
+    }
+}
