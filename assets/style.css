@@ -185,9 +185,9 @@ a:link, a:visited {
 /* settings for the div that houses descriptions in the work wection */
 .workBox {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     height: 60px;
-    width: 150px;
+    width: auto;
     background-color: rgb(18, 201, 192);
 }
 
